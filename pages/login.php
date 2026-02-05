@@ -17,8 +17,8 @@ if (isset($_POST['username'], $_POST['passwd'])) {
             header('Location: ./?page=dashboard');
         } else {
             echo '<div class="alert alert-danger" role="alert">
-                                            Login failed!
-                                            </div>';
+                        Login failed!
+                    </div>';
         }
     }
 }

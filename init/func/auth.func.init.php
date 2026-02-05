@@ -5,7 +5,7 @@ function usernameExists($username)
     $query = $db->prepare('SELECT * FROM tbl_users WHERE username = ?');
     $query->bind_param('s', $username);
     $query->execute();
-    $result =   $query->get_result();
+    $result = $query->get_result();
     if ($result->num_rows) {
         return true;
     }
@@ -33,7 +33,7 @@ function logUserIn($username, $passwd)
     $query = $db->prepare('SELECT * FROM tbl_users WHERE username = ? AND passwd = ?');
     $query->bind_param('ss', $username, $passwd);
     $query->execute();
-    $result =   $query->get_result();
+    $result = $query->get_result();
     if ($result->num_rows) {
         return $result->fetch_object();
     }
