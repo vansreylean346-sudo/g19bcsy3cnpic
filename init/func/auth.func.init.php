@@ -56,3 +56,34 @@ function loggedInUser()
     }
     return null;
 }
+
+function isUserHasPassword($passwd)
+{
+    global $db;
+    $user = loggedInUser();
+    $query = $db->prepare(
+        "SELECT * FROM tbl_users WHERE id = ? AND passwd = ?"
+    );
+    $query->bind_param('ss', $user->id, $passwd);
+    $query->execute();
+    $result = $query->get_result();
+    if ($result->num_rows) {
+        return true;
+    }
+    return false;
+}
+
+function setUserNewPassowrd($passwd)
+{
+    global $db;
+    $user = loggedInUser();
+    $query = $db->prepare(
+        "UPDATE tbl_users SET passwd = ? WHERE id = ?"
+    );
+    $query->bind_param('ss',  $passwd, $user->id);
+    $query->execute();
+    if ($db->affected_rows) {
+        return true;
+    }
+    return false;
+}
