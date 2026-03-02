@@ -9,10 +9,14 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <!-- <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li> -->
+                </li>  -->
+                <?php if ($isAdmin) { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $baseUrl ?>?page=user/list">Users</a>
+                    </li>
+                <?php } ?>
+
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -20,19 +24,19 @@
                     </a>
                     <ul class="dropdown-menu">
                         <?php if (empty($user)) { ?>
-                            <li><a class="dropdown-item" href="/g19bcsy3c/?page=login">Login</a></li>
+                            <li><a class="dropdown-item" href="<?php echo $baseUrl ?>?page=login">Login</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="/g19bcsy3c/?page=register">Register</a></li>
+                            <li><a class="dropdown-item" href="<?php echo $baseUrl ?>?page=register">Register</a></li>
                         <?php } else { ?>
                             <li>
-                                <a class="dropdown-item" href="/g19bcsy3c/?page=profile">Profile</a>
+                                <a class="dropdown-item" href="<?php echo $baseUrl ?>?page=profile">Profile</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="/g19bcsy3c/?page=logout">Logout</a></li>
+                            <li><a class="dropdown-item" href="<?php echo $baseUrl ?>?page=logout">Logout</a></li>
                         <?php } ?>
                     </ul>
                 </li>

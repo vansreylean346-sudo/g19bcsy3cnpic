@@ -99,7 +99,7 @@ function changeProfileImage($image)
     $user = loggedInUser();
     $image_path = uploadImage($image);
     if ($image_path && $user->photo) {
-    unlink($user->photo);
+        unlink($user->photo);
     }
     $query = $db->prepare('UPDATE tbl_users1 SET photo = ? WHERE id = ?');
     $query->bind_param('ss', $image_path, $user->id);
@@ -139,15 +139,15 @@ function uploadImage($image)
     $image_lowercase_ex = strtolower($image_ex);
 
     if (!in_array($image_lowercase_ex, $allow_exs)) {
-    throw new Exception('File extension is not allowed!');
+        throw new Exception('File extension is not allowed!');
     }
 
     if ($error !== 0) {
-    throw new Exception('Unknown error occurred!');
+        throw new Exception('Unknown error occurred!');
     }
 
     if ($img_size > 5000000) {
-    throw new Exception('File size is too large!');
+        throw new Exception('File size is too large!');
     }
 
     $new_image_name = uniqid("PI-").'.'.$image_lowercase_ex;
