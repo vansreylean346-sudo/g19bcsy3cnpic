@@ -24,7 +24,7 @@ if (isset($_POST['username'], $_POST['passwd'])) {
 }
 ?>
 
-<form method="post" action="./?page=login" class="col-md-8 col-lg-6 mx-auto">
+<form method="post" action="./?page=login" class="col-md-8 col-lg-6 mx-auto mt-5">
     <h3>Login</h3>
     <div class="mb-3">
         <label class="form-label">Username</label>

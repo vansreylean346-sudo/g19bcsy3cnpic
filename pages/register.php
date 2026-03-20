@@ -37,7 +37,7 @@ if (isset($_POST['name'], $_POST['username'], $_POST['passwd'], $_POST['confirmP
 }
 ?>
 
-<form method="post" action="./?page=register" class="col-md-8 col-lg-6 mx-auto">
+<form method="post" action="./?page=register" class="col-md-8 col-lg-6 mx-auto mt-5">
     <h3>Register</h3>
     <div class="mb-3">
         <label class="form-label">Name</label>

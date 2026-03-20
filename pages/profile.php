@@ -58,8 +58,8 @@ if (isset($_POST['uploadPhoto']) && isset($_FILES['photo'])) {
 }
 ?>
 
-<div class="row">
-    <div class="col-6">
+<div class="row mt-5 ">
+    <div class="col-6 p-5 ">
         <form method="post" action="./?page=profile" enctype="multipart/form-data">
             <div class="d-flex justify-content-center">
                 <input name="photo" type="file" id="profileUpload" hidden>
@@ -68,14 +68,14 @@ if (isset($_POST['uploadPhoto']) && isset($_FILES['photo'])) {
                         class="rounded img-thumbnail" style="max-width: 200px;">
                 </label>
             </div>
-            <div class="d-flex justify-content-center">
-                <button type="submit" name="deletePhoto" class="btn btn-danger">Delete</button>
-                <button type="submit" name="uploadPhoto" class="btn btn-success">Upload</button>
+            <div class="d-flex justify-content-center mx-5">
+                <button type="submit" name="deletePhoto" class="btn btn-danger mx-4 mt-3 px-9">Delete</button>
+                <button type="submit" name="uploadPhoto" class="btn btn-success mx-4 mt-3 px-9">Upload</button>
             </div>
         </form>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 p-5 ">
         <form method="post" action="./?page=profile" class="col-md-8 col-lg-6 mx-auto">
             <h3>Change Password</h3>
             <!-- Old Passwd -->
@@ -110,3 +110,5 @@ if (isset($_POST['uploadPhoto']) && isset($_FILES['photo'])) {
         </form>
     </div>
 </div>
+
+
