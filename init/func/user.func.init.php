@@ -38,6 +38,13 @@ function readUser($id){
 }
 function deleteUser($id){
     global $db;
+
+    
+    $targetUser = readUser($id);
+    if($targetUser -> photo){
+        unlink($targetUser->photo);
+    }
+
     $query = $db->prepare('DELETE  FROM tbl_users1 WHERE id=?');
     $query->bind_param('i', $id);
     $query->execute();
